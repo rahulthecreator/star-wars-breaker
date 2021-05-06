@@ -1,8 +1,8 @@
 {
-  "name": "2021-04-30-action-game",
+  "name": "first-phaser3-game",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Monarch Wadia <monarch@mintbean.io>",
+  "author": "Rahul, The Creator",
   "license": "MIT",
   "scripts": {
     "start": "parcel serve index.html"

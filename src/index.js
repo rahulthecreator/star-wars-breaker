@@ -3,32 +3,38 @@ const create = require("./lifecycle/create");
 const preload = require("./lifecycle/preload");
 const update = require("./lifecycle/update");
 
-// factories
-require("./objects/Ball.js");
-require("./objects/Bullet.js");
 
-// constants
-const { width, height } = require("./constants");
+var Breakout = new Phaser.Class({
+
+  Extends: Phaser.Scene,
+
+  initialize:
+
+  function Breakout ()
+  {
+      Phaser.Scene.call(this, { key: 'breakout' });
+
+      this.bricks;
+      this.paddle;
+      this.ball;
+  },
+});
 
 var config = {
-  type: Phaser.AUTO,
-  width,
-  height,
-  scene: {
+  type: Phaser.WEBGL,
+  width: 775,
+  height: 600,
+  parent: 'phaser-example',
+  scene: 
+  {
+    Breakout,
     preload,
     create,
-    update,
+    update
   },
   physics: {
-    default: "arcade",
-    arcade: {
-      debug: false,
-      fps: 60,
-      gravity: {
-        y: 2000,
-      },
-    },
-  },
+      default: 'arcade'
+  }
 };
 
 var game = new Phaser.Game(config);
